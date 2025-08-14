@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coach Review</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="brand">OCR Planner</a>
+        <div class="nav-links">
+          <a href="planner.html" class="nav-link">Plan Generator</a>
+          <a href="tracker.html" class="nav-link">Progress Tracker</a>
+          <a href="review.html" class="active-link">Coach Review</a>
+          <a href="coach.html" class="nav-link">Find a Coach</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>Coach / Expert Review</h1>
+      <p>
+        This page analyzes your recent training logs and plan to provide
+        personalized feedback. It highlights adherence, intensity and suggests
+        adjustments to help you reach your race goals.
+      </p>
+      <section id="reviewResults" class="plan-output">
+        <!-- Filled by review.js -->
+      </section>
+    </main>
+    <script src="review.js"></script>
+  </body>
+</html>

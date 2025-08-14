@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a Coach</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="brand">OCR Planner</a>
+        <div class="nav-links">
+          <a href="planner.html" class="nav-link">Plan Generator</a>
+          <a href="tracker.html" class="nav-link">Progress Tracker</a>
+          <a href="review.html" class="nav-link">Coach Review</a>
+          <a href="coach.html" class="active-link">Find a Coach</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>Find a Coach</h1>
+      <p>
+        Looking for personalised guidance? Search for a remote or local coach who
+        matches your needs. Select your preferences below to see matching
+        coaches.
+      </p>
+      <form id="coachSearchForm" class="plan-form">
+        <fieldset>
+          <legend>Search criteria</legend>
+          <label>
+            Coaching format:
+            <select name="location">
+              <option value="">Any</option>
+              <option value="remote">Remote / Virtual</option>
+              <option value="in-person">In‑person / Local</option>
+            </select>
+          </label>
+          <label class="checkbox-group">
+            Specialties:
+            <div class="checkboxes">
+              <label><input type="checkbox" name="specialty" value="ocr" /> OCR</label>
+              <label><input type="checkbox" name="specialty" value="running" /> Running</label>
+              <label><input type="checkbox" name="specialty" value="strength" /> Strength</label>
+              <label><input type="checkbox" name="specialty" value="nutrition" /> Nutrition</label>
+            </div>
+          </label>
+          <label>
+            Athlete level:
+            <select name="experience">
+              <option value="">Any</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </label>
+        </fieldset>
+        <button type="submit" class="primary-btn">Search Coaches</button>
+      </form>
+      <section id="coachResults" class="plan-output" hidden>
+        <h2>Matching Coaches</h2>
+        <!-- Results will be inserted here by coach.js -->
+      </section>
+    </main>
+    <script src="coach.js"></script>
+  </body>
+</html>

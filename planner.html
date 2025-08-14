@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Your OCR Plan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="brand">OCR Planner</a>
+        <!-- Navigation links: highlight current page -->
+        <div class="nav-links">
+          <a href="planner.html" class="active-link">Plan Generator</a>
+          <a href="tracker.html" class="nav-link">Progress Tracker</a>
+          <a href="review.html" class="nav-link">Coach Review</a>
+          <a href="coach.html" class="nav-link">Find a Coach</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>Create Your Training Plan</h1>
+      <p>
+        Fill in the details below. Your plan will adapt to your race, experience
+        and available training time.
+      </p>
+      <form id="planForm" class="plan-form">
+        <!-- Race details -->
+        <fieldset>
+          <legend>Race details</legend>
+          <label>
+            Race distance:
+            <select name="raceDistance" required>
+              <option value="5k">5&nbsp;K Sprint</option>
+              <option value="10k">10&nbsp;K Super</option>
+              <option value="21k">21&nbsp;K Beast</option>
+              <option value="ultra">Ultra</option>
+            </select>
+          </label>
+          <label>
+            Race date:
+            <input type="date" name="raceDate" required />
+          </label>
+        </fieldset>
+        <!-- Fitness profile -->
+        <fieldset>
+          <legend>Fitness profile</legend>
+          <label>
+            Experience level:
+            <select name="experience" required>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </label>
+          <label>
+            Current weekly running mileage (mi):
+            <input
+              type="number"
+              name="runningMileage"
+              min="0"
+              step="1"
+              required
+            />
+          </label>
+          <label>
+            Strength‑training age (months):
+            <input
+              type="number"
+              name="strengthAge"
+              min="0"
+              step="1"
+              required
+            />
+          </label>
+          <label>
+            Weekly strength sessions:
+            <input
+              type="number"
+              name="strengthFrequency"
+              min="0"
+              max="7"
+              step="1"
+              required
+            />
+          </label>
+          <label>
+            Available training days per week:
+            <input
+              type="number"
+              name="trainingDays"
+              min="1"
+              max="7"
+              step="1"
+              required
+            />
+          </label>
+        </fieldset>
+        <!-- Equipment and goals -->
+        <fieldset>
+          <legend>Resources &amp; goals</legend>
+          <label class="checkbox-group">
+            Equipment available:
+            <div class="checkboxes">
+              <label><input type="checkbox" name="equipment" value="rope" />Rope/rig</label>
+              <label><input type="checkbox" name="equipment" value="wall" />Wall/rig</label>
+              <label><input type="checkbox" name="equipment" value="sandbag" />Sandbag/bucket</label>
+              <label><input type="checkbox" name="equipment" value="hills" />Hills/trails</label>
+              <label><input type="checkbox" name="equipment" value="gym" />Gym/pull‑up bar</label>
+            </div>
+          </label>
+          <label class="checkbox-group">
+            Goals:
+            <div class="checkboxes">
+              <label><input type="checkbox" name="goals" value="completion" />Completion</label>
+              <label><input type="checkbox" name="goals" value="proficiency" />Obstacle proficiency</label>
+              <label><input type="checkbox" name="goals" value="competitive" />Competitive placing</label>
+            </div>
+          </label>
+          <label>
+            Injuries or movement restrictions (optional):
+            <textarea name="injuries" rows="3" placeholder="Describe injuries, if any..."></textarea>
+          </label>
+        </fieldset>
+        <button type="submit" class="primary-btn">Generate Plan</button>
+      </form>
+
+      <!-- Plan output section -->
+      <section id="planOutput" class="plan-output" hidden>
+        <h2>Your Training Plan</h2>
+        <!-- Countdown to race -->
+        <div id="countdownContainer" class="countdown"></div>
+        <div id="planSummary" class="plan-summary"></div>
+        <table id="planTable" class="plan-table"></table>
+        <div class="plan-actions">
+          <button id="calendarBtn" class="secondary-btn">Download Calendar (.ics)</button>
+          <button id="backBtn" class="secondary-btn">Edit inputs</button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

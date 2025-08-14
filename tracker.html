@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="brand">OCR Planner</a>
+        <div class="nav-links">
+          <a href="planner.html" class="nav-link">Plan Generator</a>
+          <a href="tracker.html" class="active-link">Progress Tracker</a>
+          <a href="review.html" class="nav-link">Coach Review</a>
+          <a href="coach.html" class="nav-link">Find a Coach</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>Progress Tracker</h1>
+      <p>
+        Log your workouts and monitor your progress throughout the training
+        plan.
+      </p>
+      <form id="logForm" class="plan-form">
+        <fieldset>
+          <legend>New entry</legend>
+          <label>
+            Date:
+            <input type="date" name="logDate" required />
+          </label>
+          <label>
+            Workout type:
+            <select name="logType" required>
+              <option value="run">Run</option>
+              <option value="strength">Strength</option>
+              <option value="other">Other</option>
+              <option value="rest">Rest</option>
+            </select>
+          </label>
+          <label>
+            Duration/distance (optional):
+            <input
+              type="text"
+              name="logValue"
+              placeholder="e.g., 5 mi or 45 min"
+            />
+          </label>
+          <label>
+            RPE/intensity (optional):
+            <input type="number" name="logRPE" min="1" max="10" step="1" />
+          </label>
+          <label>
+            Notes (optional):
+            <textarea
+              name="logNotes"
+              rows="2"
+              placeholder="Notes about the workout..."
+            ></textarea>
+          </label>
+        </fieldset>
+        <button type="submit" class="primary-btn">Add entry</button>
+      </form>
+      <section id="logsSection" class="plan-output">
+        <h2>Logged workouts</h2>
+        <table id="logsTable" class="plan-table"></table>
+      </section>
+    </main>
+    <script src="tracker.js"></script>
+  </body>
+</html>
