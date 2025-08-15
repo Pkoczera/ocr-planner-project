@@ -11,6 +11,8 @@ body {
   background-color: #f7f9fc;
   /* Use a darker text color for better contrast on light backgrounds */
   color: #222;
+  /* Base font size for desktop */
+  font-size: 16px;
 }
 
 a {
@@ -282,6 +284,8 @@ a:hover {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  overflow-x: auto;
+  display: block;
 }
 .plan-table th,
 .plan-table td {
@@ -345,10 +349,58 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  /* Increase base font size on small screens for better readability */
+  body {
+    font-size: 17px;
+  }
+  /* Increase table cell font size on mobile */
+  .plan-table th,
+  .plan-table td {
+    font-size: 0.9rem;
+  }
   .steps {
     flex-direction: column;
   }
   .hero {
     padding: 2rem 0;
+  }
+
+  /* Responsive nav: stack links and add borders on small screens */
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+  }
+  .nav-links a {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    width: 100%;
+    text-align: left;
+  }
+  /* Ensure active link stands out even in mobile layout */
+  .nav-links .active-link {
+    background: #00a896;
+    color: #fff;
+    border-color: #00a896;
+  }
+  /* Make plan actions buttons full width on mobile */
+  .plan-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .plan-actions .secondary-btn,
+  .plan-actions .primary-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  /* Adjust achievements container to stack badges */
+  .achievements-container {
+    flex-direction: column;
+  }
+  .coach-list {
+    grid-template-columns: 1fr;
   }
 }
