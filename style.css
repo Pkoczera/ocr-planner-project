@@ -5,12 +5,26 @@
   padding: 0;
 }
 
+/* Define theme color variables for consistency */
+:root {
+  --color-primary: #004e8a;
+  --color-primary-dark: #002f5b;
+  --color-secondary: #00a896;
+  --color-secondary-light: #00c1a6;
+  --color-accent: #007acc;
+  --color-background: #f8fbff;
+  --color-background-alt: #eaf3fb;
+  --color-light: #ffffff;
+  --color-text: #222222;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #f7f9fc;
-  /* Use a darker text color for better contrast on light backgrounds */
-  color: #222;
+  /* Subtle gradient background for a clean, modern look using theme variables */
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+  /* Use theme text color for better contrast on light backgrounds */
+  color: var(--color-text);
   /* Base font size for desktop */
   font-size: 16px;
 }
@@ -30,11 +44,30 @@ a:hover {
   padding: 1rem;
 }
 
+/* Global heading styles for consistency across pages */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #0a2540;
+  text-align: center;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #0a2540;
+  text-align: center;
+}
+
 /* Navigation */
 .navbar {
-  background: #0a2540;
-  color: #fff;
-  padding: 0.5rem 0;
+  /* Gradient for navigation bar using theme colors */
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-light);
+  padding: 0.75rem 0;
 }
 .nav-container {
   display: flex;
@@ -47,14 +80,16 @@ a:hover {
   color: #fff;
 }
 .cta-btn {
-  background: #00a896;
-  color: #fff;
+  background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+  color: var(--color-light);
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background 0.2s;
+  border-radius: 6px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .cta-btn:hover {
-  background: #028079;
+  background: linear-gradient(90deg, #028079 0%, #00b190 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Additional navigation link styling */
@@ -64,19 +99,23 @@ a:hover {
 }
 .nav-links a {
   margin-left: 1rem;
-  color: #fff;
+  color: var(--color-light);
   text-decoration: none;
   font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
 }
 /* Highlight the active page within navigation */
 .nav-links .active-link {
-  background: #00a896;
+  background: var(--color-secondary);
   padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: 6px;
+  color: var(--color-light);
 }
 .nav-links a:hover {
   text-decoration: underline;
+  background: rgba(255, 255, 255, 0.15);
 }
 /* Tracker link style for home page nav */
 .tracker-link {
@@ -93,10 +132,10 @@ a:hover {
 
 /* Hero section */
 .hero {
-  /* Background image for the hero section */
-  background: url('https://images.unsplash.com/photo-1584466977773-94fda449f1d1?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  /* Replace the background image with a vibrant gradient for a stunning look */
+  background: linear-gradient(135deg, #004e8a 0%, #00a5a8 100%);
   color: #fff;
-  padding: 4rem 0;
+  padding: 5rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -110,7 +149,8 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  /* Slightly lighten the overlay since there is no image underneath */
+  background: rgba(0, 0, 0, 0.2);
   z-index: 0;
 }
 
@@ -126,7 +166,7 @@ a:hover {
 .primary-btn {
   display: inline-block;
   margin-top: 1.5rem;
-  background: #00a896;
+  background: linear-gradient(90deg, #00a896 0%, #00c1a6 100%);
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
@@ -134,7 +174,7 @@ a:hover {
   transition: background 0.2s;
 }
 .primary-btn:hover {
-  background: #028079;
+  background: linear-gradient(90deg, #028079 0%, #00b190 100%);
 }
 
 /* How it works */
@@ -165,8 +205,9 @@ a:hover {
 
 /* Footer */
 .footer {
-  background: #0a2540;
-  color: #fff;
+  /* Gradient footer to complement the header and hero */
+  background: linear-gradient(90deg, #004e8a 0%, #0a2540 100%);
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
 }
@@ -174,10 +215,10 @@ a:hover {
 /* Planner form */
 .plan-form {
   margin-top: 2rem;
-  background: #fff;
+  background: #ffffff;
   padding: 2rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 .plan-form fieldset {
   border: none;
@@ -208,23 +249,23 @@ a:hover {
 }
 .secondary-btn {
   margin-top: 1.5rem;
-  background: #ccc;
-  color: #333;
+  background: #eaf5f1;
+  color: #00a896;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   border: none;
   cursor: pointer;
 }
 .secondary-btn:hover {
-  background: #bbb;
+  background: #d4ebe2;
 }
 
 .plan-output {
   margin-top: 2rem;
-  background: #fff;
+  background: #ffffff;
   padding: 2rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Countdown container styling */
@@ -233,7 +274,7 @@ a:hover {
   padding: 0.75rem 1rem;
   background-color: #f5faff;
   border-left: 4px solid #007acc;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .countdown h3 {
   margin-top: 0;
@@ -258,11 +299,11 @@ a:hover {
   margin-top: 1rem;
 }
 .coach-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #e0eaf0;
+  border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 .coach-card h3 {
   margin-top: 0;
@@ -295,7 +336,8 @@ a:hover {
   vertical-align: top;
 }
 .plan-table th {
-  background: #f0f4fa;
+  background: #f0f8ff;
+  border: 1px solid #d0e2ff;
 }
 
 /* Completed workout indicator */
@@ -309,16 +351,34 @@ a:hover {
 .info-icon {
   display: inline-block;
   margin-left: 0.25rem;
-  width: 0.9rem;
-  height: 0.9rem;
-  line-height: 0.9rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
   text-align: center;
   border-radius: 50%;
   background-color: #007acc;
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: bold;
-  cursor: help;
+  cursor: pointer;
+}
+
+/* Tooltip for info icons, shown on click */
+.info-tooltip {
+  display: none;
+  margin-left: 0.5rem;
+  background-color: #007acc;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: normal;
+  position: relative;
+  z-index: 10;
+}
+
+.info-tooltip.visible {
+  display: inline-block;
 }
 
 /* Achievements section styling */

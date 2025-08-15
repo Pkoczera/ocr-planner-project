@@ -226,6 +226,41 @@ function renderPlan(plan) {
   planTable.appendChild(tbody);
 }
 
+// Setup click-activated tooltips for information icons
+function setupInfoIcons() {
+  const icons = document.querySelectorAll('.info-icon');
+  icons.forEach((icon) => {
+    // Prefer custom data-info attribute, fallback to title
+    const text = icon.getAttribute('data-info') || icon.getAttribute('title');
+    if (!text) return;
+    // Remove default title to prevent native tooltip
+    if (icon.hasAttribute('title')) {
+      icon.removeAttribute('title');
+    }
+    // Create tooltip element
+    const tooltip = document.createElement('span');
+    tooltip.className = 'info-tooltip';
+    tooltip.textContent = text;
+    // Insert tooltip after the icon
+    icon.after(tooltip);
+    // Toggle tooltip on click
+    icon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // Hide any other visible tooltips
+      document.querySelectorAll('.info-tooltip.visible').forEach((t) => {
+        if (t !== tooltip) t.classList.remove('visible');
+      });
+      tooltip.classList.toggle('visible');
+    });
+    // Hide tooltip when clicking elsewhere
+    document.addEventListener('click', (ev) => {
+      if (!icon.contains(ev.target)) {
+        tooltip.classList.remove('visible');
+      }
+    });
+  });
+}
+
 // Update the countdown to race day and display milestone suggestions
 function updateCountdown(raceDateStr) {
   const container = document.getElementById('countdownContainer');
@@ -578,4 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // Setup interactive tooltips for information icons
+  setupInfoIcons();
 });
