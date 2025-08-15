@@ -301,6 +301,49 @@ a:hover {
   font-weight: 500;
 }
 
+/* Info icon styling for tooltips */
+.info-icon {
+  display: inline-block;
+  margin-left: 0.25rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #007acc;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: bold;
+  cursor: help;
+}
+
+/* Achievements section styling */
+.achievements-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.achievement-badge {
+  background: #f5faff;
+  border-left: 4px solid #00a896;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  min-width: 200px;
+  max-width: 250px;
+}
+.achievement-badge h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a2540;
+}
+.achievement-badge p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #333;
+}
+
 @media (max-width: 600px) {
   .steps {
     flex-direction: column;
